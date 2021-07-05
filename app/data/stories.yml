@@ -5,6 +5,7 @@ stories:
 - story: happy path
   steps:
   - intent: greet
+  - action: utter_greet
   - action: utter_enquire_sl
   - intent: affirm
   - action: utter_first_aid

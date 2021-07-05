@@ -54,6 +54,9 @@ responses:
     - title: "No"
       payload: '/deny'
 
+  utter_greet:
+  - text: "Hello Good morning, I am a Arnold-Group Chatbot and I will be asking you few questions to speed up the interview process."
+  
   utter_enquire_sl:
   - text: "Do you have a current security license?"
     buttons: 
@@ -70,8 +73,6 @@ responses:
     - title: "No"
       payload: '/deny'
 
-  utter_greet:
-  - text: "Let's start the pre-screening"
 
   utter_goodbye:
   - text: "Thank you for answering the questions, our recruiter will soon connect with you"
