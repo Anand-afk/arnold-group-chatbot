@@ -36,7 +36,7 @@ responses:
     - title: "Casual"
       payload: '/casual'
     - title: "Either"
-      payload: "/either"
+      payload: '/either'
 
   utter_first_aid:
   - text: "Do you have a current first aid certificate?" 
@@ -74,7 +74,7 @@ responses:
   - text: "Let's start the pre-screening"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "Thank you for answering the questions, our recruiter will soon connect with you"
 
 
 session_config:

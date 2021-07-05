@@ -15,3 +15,4 @@ stories:
   - intent: either
   - action: utter_availability_next_week
   - intent: affirm
+  - action: utter_goodbye
