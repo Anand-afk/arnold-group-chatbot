@@ -1,0 +1,82 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+
+slots:
+  workLocation:
+    type: categorical
+    values:
+      - Yes
+      - No
+
+  workPreference:
+    type: categorical
+    values:
+      - Yes
+      - No
+  securityLicense:
+    type: categorical
+    values:
+      - Yes
+      - No
+
+responses:
+  utter_work_preference:
+  - text: "What is you work preference?"
+    buttons: 
+    - title: "Full time"
+      payload: '/full_time'
+    - title: "Casual"
+      payload: '/casual'
+    - title: "Either"
+      payload: "/either"
+
+  utter_first_aid:
+  - text: "Do you have a current first aid certificate?" 
+    buttons: 
+    - title: "Yes"
+      payload: '/affirm'
+    - title: "No"
+      payload: '/deny'
+
+  utter_availability_next_week:
+  - text: "Are you available for interview next week with the operations team?"
+    buttons: 
+    - title: "Yes"
+      payload: '/affirm'
+    - title: "No"
+      payload: '/deny'
+
+  utter_enquire_sl:
+  - text: "Do you have a current security license?"
+    buttons: 
+    - title: "Yes"
+      payload: '/affirm'
+    - title: "No"
+      payload: '/deny'
+  
+  utter_enquire_worked_before:
+  - text: "Have you applied, interviewed or worked for Wilson, either directly or as a sub contractor?"
+    buttons: 
+    - title: "Yes"
+      payload: '/affirm'
+    - title: "No"
+      payload: '/deny'
+
+  utter_greet:
+  - text: "Let's start the pre-screening"
+
+  utter_goodbye:
+  - text: "Bye"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
