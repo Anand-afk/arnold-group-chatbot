@@ -8,24 +8,16 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - either
+  - full_time
+  - casual
+
+entities: []
 
 slots:
-  workLocation:
-    type: categorical
-    values:
-      - Yes
-      - No
-
-  workPreference:
-    type: categorical
-    values:
-      - Yes
-      - No
   securityLicense:
-    type: categorical
-    values:
-      - Yes
-      - No
+    type: text
+    auto_fill: false
 
 responses:
   utter_work_preference:
@@ -64,6 +56,11 @@ responses:
       payload: '/affirm'
     - title: "No"
       payload: '/deny'
+    # - title: "Yes"
+    #   payload: '/affirm{"securityLicense": "Yes"}'
+    # - title: "No"
+    #   payload: '/deny{"securityLicense": "No"}'
+    
   
   utter_enquire_worked_before:
   - text: "Have you applied, interviewed or worked for Wilson, either directly or as a sub contractor?"
@@ -77,7 +74,6 @@ responses:
   utter_goodbye:
   - text: "Thank you for answering the questions, our recruiter will soon connect with you"
 
+actions:
+  - action_save_conversation
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
