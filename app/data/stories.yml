@@ -5,15 +5,16 @@ stories:
 - story: happy path
   steps:
   - intent: greet
-  - action: utter_enquire_sl
-  - intent: affirm
-  - action: utter_first_aid
-  - intent: affirm
-  - action: utter_enquire_worked_before
-  - intent: affirm
-  - action: utter_work_preference
-  - intent: either
-  - action: utter_availability_next_week
-  - intent: affirm
-  - action: utter_goodbye
   - action: action_save_conversation
+  # - action: utter_enquire_sl
+  # - intent: affirm
+  # - action: utter_first_aid
+  # - intent: affirm
+  # - action: utter_enquire_worked_before
+  # - intent: affirm
+  # - action: utter_work_preference
+  # - intent: either
+  # - action: utter_availability_next_week
+  # - intent: affirm
+  # - action: utter_goodbye
+  # - action: action_save_conversation

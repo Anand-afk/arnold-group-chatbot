@@ -9,11 +9,11 @@
 
 from typing import Any, Text, Dict, List
 
-import rasa.core.tracker_store
-from rasa.shared.core.trackers import DialogueStateTracker
+# import rasa.core.tracker_store
+# from rasa.shared.core.trackers import DialogueStateTracker
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-import pandas as pd
+# import pandas as pd
 
 
 class ActionSaveConversation(Action):
@@ -25,23 +25,23 @@ class ActionSaveConversation(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        conversation=tracker.events
-        print(conversation)
-        data = []
-        bot=""
-        user=""
-        for i in range(1,len(conversation)-1):
-            if conversation[i]['event'] == 'bot':
-                bot = conversation[i]['text']
-            elif conversation[i+1]['event'] == 'user':
-                user = conversation[i+1]['parse_data']['intent']['name']
-                data.append([bot,user])
-                bot=""
-                user=""
-            else:
-                continue
-        df = pd.DataFrame(data, columns = ['Bot', 'User'])   
-        df.to_csv('chat.csv',index=False)
+        # conversation=tracker.events
+        # print(conversation)
+        # data = []
+        # bot=""
+        # user=""
+        # for i in range(1,len(conversation)-1):
+        #     if conversation[i]['event'] == 'bot':
+        #         bot = conversation[i]['text']
+        #     elif conversation[i+1]['event'] == 'user':
+        #         user = conversation[i+1]['parse_data']['intent']['name']
+        #         data.append([bot,user])
+        #         bot=""
+        #         user=""
+        #     else:
+        #         continue
+        # df = pd.DataFrame(data, columns = ['Bot', 'User'])   
+        # df.to_csv('chat.csv',index=False)
 
         #  import os
         # if not os.path.isfile('chats.csv'):
@@ -68,6 +68,6 @@ class ActionSaveConversation(Action):
         # else:
         #     with open('chats.csv','a') as file:
         #         file.write(chat_data)
-
+        dispatcher.utter_message("hello anand from Action server")
         return []
 
